@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>生日快乐！</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .container {
+      padding: 20px;
+      max-width: 90%;
+    }
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin: 15px 0;
+    }
+    .cake {
+      font-size: 4em;
+      margin: 20px 0;
+      animation: bounce 2s infinite;
+    }
+    .btn {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border-radius: 50px;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎂 生日快乐！</h1>
+    <div class="cake">🍰</div>
+    <p>愿你今天被幸福包围，<br>被笑容点亮✨</p>
+    <p>新的一岁，平安喜乐常相伴，<br>梦想成真步步高！</p>
+    <button class="btn" onclick="playMusic()">点我放生日歌 🎶</button>
+  </div>
+  <audio id="birthdaySong" preload="none">
+    <source src="https://www.soundjay.com/buttons/sounds/button-09.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    function playMusic() {
+      const audio = document.getElementById('birthdaySong');
+      audio.play().catch(e => {
+        alert("音乐需要手动点击才能播放哦～");
+      });
+    }
+    window.onload = () => {
+      setTimeout(() => {
+        const audio = document.getElementById('birthdaySong');
+      }, 1000);
+    };
+  </script>
+</body>
+</html>
